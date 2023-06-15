@@ -5,15 +5,13 @@ public class Animal {
 	private String name;
 	private double height;
 	private int weight;
-	protected int energy = 20;
+	private int energy = 20;
 	private boolean isLiving = true;
 	static int animalCount;
 	
 //	Constructors ----------------------------
 	public Animal(){
 		this.name = "default123";
-		this.height = 0;
-		this.weight = 0;
 		animalCount++;
 	}
 	
@@ -21,12 +19,12 @@ public class Animal {
 		this.name = name;
 		animalCount++;
 	}
-	public Animal(String name, double height, int weight){
-		this.name = name;
-		this.height = height;
-		this.weight = weight;
-		animalCount++;
-	}
+//	public Animal(String name, double height, int weight){
+//		this.name = name;
+//		this.height = height;
+//		this.weight = weight;
+//		animalCount++;
+//	}
 //	Class Methods ------------------------------
 	public void display() {
 		System.out.println("Animal Class");
@@ -71,7 +69,7 @@ public class Animal {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-//
+
 	public static int getAnimalCount() {
 		return animalCount;
 	}

@@ -10,6 +10,7 @@ public class AnimalController {
 		Animal an = new Animal();
 //		System.out.println(an.getName());
 		Frog frog1 = new Frog("Kermit");
+		Frog frog2 = new Frog("Hypno-Toad", 5.5, 2);
 		Deer deer1 = new Deer("Bambi");
 		deer1.display();
 //		System.out.println(Animal.getAnimalCount());

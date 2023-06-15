@@ -1,14 +1,23 @@
 package com.camerons.oopjune.classes;
 
 public class Frog extends Animal{
+//	Member Variables ------------------------
 	static int frogCount;
 
+//	Constructors ----------------------------
 	public Frog(String name) {
 		super(name);
-		this.energy = 10;
+		this.setEnergy(10);
 		frogCount++;
 	}
-	
+	public Frog(String name, double height, int weight) {
+		super(name);
+		this.setHeight(height);
+		this.setWeight(weight);
+		this.setEnergy(10);
+		frogCount++;
+	}
+//	Class Methods ------------------------------
 	public void display() {
 		System.out.println("Frog Class");
 		super.display();
@@ -17,13 +26,14 @@ public class Frog extends Animal{
 	
 	public void jump() {
 		if(this.isLivingCheck()) {
-			super.decrementEnergy(5);
+			this.setEnergy(this.getEnergy()-5);;
+			System.out.printf("%s Hop Hop\n", this.getName());
 		}else {
-			super.decrementEnergy(5);
-			System.out.printf("%s dead, you cant hop.\n", this.getName());		
+			System.out.printf("%s is dead, you cant hop.\n", this.getName());		
 		}
 	}
-	
+
+//	Getters & Setters ------------------------
 	public static int getFrogCount() {
 		return frogCount;
 	}
