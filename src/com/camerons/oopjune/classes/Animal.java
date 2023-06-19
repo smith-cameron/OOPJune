@@ -1,11 +1,13 @@
 package com.camerons.oopjune.classes;
 
-public class Animal {
+import com.camerons.oopjune.interfaces.AnimalFunctionality;
+
+public abstract class Animal implements AnimalFunctionality{
 //	Member Variables ------------------------
 	private String name;
 	private double height;
 	private int weight;
-	private int energy = 20;
+	protected int energy = 20;
 	private boolean isLiving = true;
 	static int animalCount;
 	
@@ -45,6 +47,14 @@ public class Animal {
 	protected void decrementEnergy(int value) {
 		this.energy -= value;
 	}
+	public abstract void move(String type);
+	
+	public void eat(int energy) {
+		this.energy += energy;
+		System.out.printf("%s Happily Eating\n", this.name);
+		
+	}
+	
 //	Getters & Setters ------------------------
 	public String getName() {
 		return name;

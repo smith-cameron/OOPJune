@@ -20,14 +20,32 @@ public class Deer extends Animal{
 		System.out.printf("All Deer: %s\n", deerCount);
 	}
 	
-	public void run() {
+	public void run(int energyUsed) {
 		if(this.isLivingCheck()) {
-			super.decrementEnergy(15);
-			System.out.printf("%s Hop Hop\n", this.getName());			
+			super.decrementEnergy(energyUsed);
+			System.out.printf("%s Hop Hop(But this is a deer)\n", this.getName());			
 		}else {
 			System.out.printf("Dead %s's dont jump\n", this.getName());
 		}
 	}
+	public void move(String movementType) {
+		switch(movementType) {
+		case "run":
+			run(10);
+			break;
+		default:
+			System.out.println("Invalid movement type");
+			break;
+		}
+	}
+
+	@Override
+	public void eat(int energy) {
+		System.out.println("Deer Eating");
+		this.energy += energy;
+		
+	}
+	
 //	Getters & Setters ------------------------
 	
 }
